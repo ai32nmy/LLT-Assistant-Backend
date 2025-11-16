@@ -1,8 +1,3 @@
-下面为你 **完整润色 + 翻译为正式英文技术文档** 的版本，并已按照 **README.md** 的格式组织（含标题、结构、代码块、架构图、Mermaid 图等全部英文化与技术润色）。
-内容不仅是翻译，而是 *technical-writing level* 的英文重写，使之适合作为真实项目的 README 或 API 设计文档。
-
----
-
 # **LLT Assistant API Design Document**
 
 ## 📋 Table of Contents
