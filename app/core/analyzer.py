@@ -18,8 +18,8 @@ from app.api.v1.schemas import (
     ImpactAnalysisResponse,
     ImpactItem,
 )
+from app.core.analysis.strategies import get_strategy
 from app.core.protocols import LLMAnalyzerProtocol, RuleEngineProtocol
-from app.core.strategies import get_strategy
 
 logger = logging.getLogger(__name__)
 

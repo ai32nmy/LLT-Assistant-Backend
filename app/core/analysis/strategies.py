@@ -10,8 +10,8 @@ from typing import List
 
 from app.analyzers.ast_parser import ParsedTestFile, TestFunctionInfo
 from app.api.v1.schemas import Issue
+from app.core.analysis.uncertain_case_detector import UncertainCaseDetector
 from app.core.protocols import AnalysisStrategy, LLMAnalyzerProtocol, RuleEngineProtocol
-from app.core.uncertain_case_detector import UncertainCaseDetector
 
 logger = logging.getLogger(__name__)
 

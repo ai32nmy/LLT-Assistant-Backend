@@ -11,7 +11,7 @@ from unittest.mock import AsyncMock, MagicMock, Mock, patch
 import httpx
 import pytest
 
-from app.core.llm_client import (
+from app.core.llm.llm_client import (
     LLMAPIError,
     LLMClient,
     LLMClientError,

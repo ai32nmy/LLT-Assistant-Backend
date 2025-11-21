@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.v1.routes import router as api_router
 from app.config import settings
-from app.core.logging_config import setup_logging
+from app.core.services.logging_config import setup_logging
 
 # Set up structured logging
 setup_logging()
@@ -27,7 +27,7 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
 
     # Cleanup task storage
     try:
-        from app.core.tasks import cleanup_task_storage
+        from app.core.tasks.tasks import cleanup_task_storage
 
         await cleanup_task_storage()
     except Exception as e:

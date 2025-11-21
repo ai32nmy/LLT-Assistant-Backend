@@ -17,9 +17,9 @@ from app.api.v1.schemas import (
     QualityIssue,
     QualitySummary,
 )
+from app.core.analysis.llm_analyzer import LLMAnalyzer
 from app.core.analyzer import TestAnalyzer
-from app.core.llm_analyzer import LLMAnalyzer
-from app.core.llm_client import create_llm_client
+from app.core.llm.llm_client import create_llm_client
 
 logger = logging.getLogger(__name__)
 

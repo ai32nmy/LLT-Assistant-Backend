@@ -20,6 +20,7 @@ class Settings(BaseSettings):
 
     # LLM Configuration
     llm_api_key: str = Field(
+        default="test-key-for-development",
         validation_alias="LLM_API_KEY",
         description="LLM API key (from LLM_API_KEY env var)",
     )

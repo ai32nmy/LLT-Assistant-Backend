@@ -58,7 +58,7 @@ def llm_analyzer_for_eval():
     Note: This requires LLM_API_KEY to be set in environment.
     Returns a wrapper that provides raw LLM responses for evaluation.
     """
-    from app.core.llm_analyzer import LLMAnalyzer
+    from app.core.analysis.llm_analyzer import LLMAnalyzer
 
     analyzer = LLMAnalyzer()
 
@@ -72,7 +72,7 @@ def llm_analyzer_for_eval():
             """Return raw mergeability analysis dict."""
             import json
 
-            from app.core.llm_analyzer import (
+            from app.core.analysis.llm_analyzer import (
                 MERGEABILITY_SYSTEM_PROMPT,
                 MERGEABILITY_USER_PROMPT,
             )
@@ -102,7 +102,7 @@ def llm_analyzer_for_eval():
             """Return raw assertion quality analysis dict."""
             import json
 
-            from app.core.llm_analyzer import (
+            from app.core.analysis.llm_analyzer import (
                 ASSERTION_QUALITY_SYSTEM_PROMPT,
                 ASSERTION_QUALITY_USER_PROMPT,
             )
@@ -127,7 +127,7 @@ def llm_analyzer_for_eval():
             """Return raw test smell analysis dict."""
             import json
 
-            from app.core.llm_analyzer import (
+            from app.core.analysis.llm_analyzer import (
                 TEST_SMELL_SYSTEM_PROMPT,
                 TEST_SMELL_USER_PROMPT,
             )

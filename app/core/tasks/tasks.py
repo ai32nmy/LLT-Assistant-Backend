@@ -21,8 +21,8 @@ DEFAULT_FALLBACK_TARGET_LINE = 50
 import redis.asyncio as redis
 
 from app.config import settings
-from app.core.in_memory_tasks import get_in_memory_task_store
-from app.core.llm_client import create_llm_client
+from app.core.llm.llm_client import create_llm_client
+from app.core.tasks.in_memory_tasks import get_in_memory_task_store
 
 TASK_TTL_SECONDS = 60 * 60 * 24  # 24 hours
 TASK_KEY_PREFIX = "task:"

@@ -17,7 +17,7 @@ from app.analyzers.ast_parser import parse_test_file
 from app.analyzers.rule_engine import RuleEngine
 from app.config import Settings
 from app.core.analyzer import TestAnalyzer
-from app.core.llm_client import LLMClient
+from app.core.llm.llm_client import LLMClient
 from app.main import app
 
 

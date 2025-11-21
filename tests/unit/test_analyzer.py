@@ -12,8 +12,8 @@ import pytest
 from app.analyzers.ast_parser import AssertionInfo, ParsedTestFile, TestFunctionInfo
 from app.analyzers.rule_engine import RuleEngine
 from app.api.v1.schemas import FileInput, Issue
+from app.core.analysis.llm_analyzer import LLMAnalyzer
 from app.core.analyzer import TestAnalyzer
-from app.core.llm_analyzer import LLMAnalyzer
 
 
 @pytest.fixture
@@ -224,7 +224,7 @@ class TestTestAnalyzer:
         ):
             # Patch UncertainCaseDetector since it's now in a separate class
             with patch(
-                "app.core.strategies.UncertainCaseDetector"
+                "app.core.analysis.strategies.UncertainCaseDetector"
             ) as mock_detector_class:
                 mock_detector = Mock()
                 mock_detector.identify_uncertain_cases.return_value = [

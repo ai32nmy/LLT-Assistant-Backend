@@ -6,7 +6,7 @@ from typing import List, Optional, Tuple
 
 from app.analyzers.ast_parser import ParsedTestFile, TestFunctionInfo
 from app.api.v1.schemas import Issue, IssueSuggestion
-from app.core.llm_client import LLMClient, create_llm_client
+from app.core.llm.llm_client import LLMClient, create_llm_client
 
 logger = logging.getLogger(__name__)
 

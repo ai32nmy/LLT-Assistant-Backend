@@ -23,12 +23,12 @@ from app.api.v1.schemas import (
     TaskError,
     TaskStatusResponse,
 )
+from app.core.analysis.llm_analyzer import LLMAnalyzer
 from app.core.analyzer import ImpactAnalyzer, TestAnalyzer
 from app.core.constants import MAX_FILES_PER_REQUEST
-from app.core.llm_analyzer import LLMAnalyzer
-from app.core.llm_client import create_llm_client
-from app.core.quality_service import QualityAnalysisService
-from app.core.tasks import (
+from app.core.llm.llm_client import create_llm_client
+from app.core.services.quality_service import QualityAnalysisService
+from app.core.tasks.tasks import (
     TaskStatus,
     create_task,
     execute_coverage_optimization_task,
