@@ -192,7 +192,7 @@ class TestCoverageOptimizationTaskStatus:
     def test_get_task_status_returns_404_when_task_not_found(
         self, client: TestClient, monkeypatch: pytest.MonkeyPatch
     ) -> None:
-        """Missing task should result in 404 according to the spec."""
+        """Missing task should result in 404 with empty body according to the spec."""
 
         async def fake_get_task(task_id: str) -> None:  # type: ignore[override]
             return None
@@ -202,3 +202,5 @@ class TestCoverageOptimizationTaskStatus:
         response = client.get("/api/v1/tasks/00000000-0000-0000-0000-000000000000")
 
         assert response.status_code == 404
+        # According to OpenAPI spec, 404 response should have empty body
+        assert response.content == b""

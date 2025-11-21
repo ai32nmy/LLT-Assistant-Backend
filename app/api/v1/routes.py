@@ -8,7 +8,8 @@ import asyncio
 import logging
 from typing import Any, Dict
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, Response, status
+from starlette.responses import Response as StarletteResponse
 
 from app.analyzers.rule_engine import RuleEngine
 from app.api.v1.schemas import (
@@ -185,7 +186,7 @@ async def submit_coverage_optimization(
 
 
 @router.get("/tasks/{task_id}", response_model=TaskStatusResponse)
-async def get_task_status(task_id: str) -> TaskStatusResponse:
+async def get_task_status(task_id: str) -> TaskStatusResponse | StarletteResponse:
     """
     Get task status and results.
 
@@ -203,7 +204,7 @@ async def get_task_status(task_id: str) -> TaskStatusResponse:
     """
     task_data = await get_task(task_id)
     if task_data is None:
-        raise HTTPException(status_code=404, detail="Task not found")
+        return StarletteResponse(status_code=404)
 
     # Convert task data to TaskStatusResponse
     error = None
