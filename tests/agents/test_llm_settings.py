@@ -72,7 +72,7 @@ class TestLLMSettings:
             get_llm_settings.cache_clear()
 
             with pytest.raises(ValidationError):
-                LLMSettings()
+                LLMSettings(_env_file=None)
 
     def test_get_sanitized_dict(self) -> None:
         """Test that API key is redacted in sanitized dict."""

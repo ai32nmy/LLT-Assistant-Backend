@@ -306,7 +306,12 @@ class TestAgentOrchestrator:
         assert "test_orch" in repr_str
         assert "sequential_agents=1" in repr_str
         assert "parallel_agents=2" in repr_str
-
+def test_orchestrator_creation():
+    """Test basic orchestrator creation."""
+    orchestrator = AgentOrchestrator(name="creation_test")
+    assert orchestrator.name == "creation_test"
+    assert orchestrator.sequential_agents == []
+    assert orchestrator.parallel_agent_groups == []
 
 @pytest.mark.asyncio
 class TestParallelAgentGroup:
