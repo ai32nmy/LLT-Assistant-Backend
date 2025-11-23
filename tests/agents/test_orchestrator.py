@@ -6,7 +6,6 @@ agent execution, error handling, and metrics collection.
 """
 
 import pytest
-from unittest.mock import AsyncMock
 
 from app.agents.base import BaseAgent
 from app.agents.context import AgentContext, AgentResult
