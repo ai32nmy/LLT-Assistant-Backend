@@ -262,9 +262,9 @@ class TestLLMSettings:
 
     def test_get_optional_llm_settings_missing_config(self) -> None:
         """Test get_optional_llm_settings with missing config."""
-        with patch("app.agents.llm.settings.get_settings") as mock_get_settings:
-            mock_get_settings.side_effect = FileNotFoundError
-
+        with patch("app.agents.llm.settings.get_llm_settings") as mock_get_llm_settings:
+            mock_get_llm_settings.side_effect = FileNotFoundError
+    
             # Clear the cache to ensure the function is re-executed
             get_llm_settings.cache_clear()
 
