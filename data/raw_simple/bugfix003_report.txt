@@ -1,0 +1,7 @@
+ID: bugfix003
+Bug type: incorrect branch for negative numbers
+
+Description:
+For negative inputs, the buggy version returns 0 rather than the positive
+magnitude. For example, absolute_value(-5) returns 0 instead of 5. The fixed
+implementation correctly returns -x when x is negative.

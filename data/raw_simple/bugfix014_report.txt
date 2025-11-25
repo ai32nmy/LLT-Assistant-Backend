@@ -1,0 +1,8 @@
+ID: bugfix014
+Bug type: missing tail append in merge of sorted lists
+
+Description:
+The buggy implementation merges elements only while both lists have remaining
+items, but never appends the leftover elements from either list. The fixed
+version adds two loops to append the remaining elements from a or b, ensuring
+the merged result contains all inputs.

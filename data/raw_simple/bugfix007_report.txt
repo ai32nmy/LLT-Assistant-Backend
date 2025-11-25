@@ -1,0 +1,8 @@
+ID: bugfix007
+Bug type: string slice excludes last character in palindrome check
+
+Description:
+The buggy version compares s[:-1] (all characters except the last) with the
+reverse of the full string. This can produce incorrect results, especially for
+single-character strings or when the last character is different. The fixed
+version compares the whole string s with s[::-1].

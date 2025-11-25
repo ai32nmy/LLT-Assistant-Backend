@@ -1,0 +1,7 @@
+ID: bugfix004
+Bug type: wrong slice step when reversing string
+
+Description:
+The buggy version uses s[::1], which simply copies the original string without
+reversing it. The correct way to reverse a string using slicing is s[::-1].
+The fixed version uses the correct step -1.

@@ -1,0 +1,8 @@
+ID: bugfix010
+Bug type: incorrect handling of 1 and even numbers in primality test
+
+Description:
+The buggy version incorrectly returns True for n <= 1 and for all even numbers.
+This makes many composite numbers prime. The fixed version properly treats
+n <= 1 as non-prime, returns True only for n == 2 among even numbers, and
+rejects other even values.

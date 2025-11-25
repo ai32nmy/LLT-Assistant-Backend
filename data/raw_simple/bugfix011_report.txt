@@ -1,0 +1,7 @@
+ID: bugfix011
+Bug type: wrong parity condition for even numbers
+
+Description:
+The buggy function checks v % 2 == 1, which selects odd numbers, but still raises
+an error saying there are no even numbers if none are found. The fixed version
+uses v % 2 == 0 to correctly accumulate even numbers in both total and count.

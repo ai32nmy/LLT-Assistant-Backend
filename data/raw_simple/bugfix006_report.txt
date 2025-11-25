@@ -1,0 +1,7 @@
+ID: bugfix006
+Bug type: incorrect factorial base case
+
+Description:
+The buggy code returns 0 for factorial(0), which is mathematically incorrect.
+Factorial(0) should be 1. The fixed version returns 1 when n == 0 and uses the
+same loop for n > 0.

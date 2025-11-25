@@ -1,0 +1,8 @@
+ID: bugfix008
+Bug type: wrong container used to track seen elements
+
+Description:
+The buggy implementation checks x not in result instead of x not in seen.
+Although in this specific pattern result and seen happen to stay the same, this
+is logically wrong and brittle. In more complex refactors it can easily break.
+The fixed version uses seen consistently as the membership check structure.

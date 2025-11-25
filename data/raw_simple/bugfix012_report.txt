@@ -1,0 +1,7 @@
+ID: bugfix012
+Bug type: returning value instead of index
+
+Description:
+The function specification says it should return the index of the minimum
+element, but the buggy implementation returns the minimum value itself.
+The fixed version returns min_index, which is the position of the minimum element.

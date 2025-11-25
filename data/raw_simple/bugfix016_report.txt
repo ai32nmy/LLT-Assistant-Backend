@@ -1,0 +1,8 @@
+ID: bugfix016
+Bug type: swapped clamp return values
+
+Description:
+When value is below the minimum, the buggy code returns max_value, and when
+value is above the maximum, it returns min_value. This is the opposite of
+correct clamping behavior. The fixed version returns min_value when value is
+too small and max_value when value is too large.

@@ -1,0 +1,8 @@
+ID: bugfix019
+Bug type: division by zero when all elements are zero
+
+Description:
+If all elements are zero, max_abs remains 0.0 and the buggy implementation
+divides by max_abs, causing a ZeroDivisionError. The fixed version explicitly
+checks for max_abs == 0.0 and returns a list of zeros in that case instead of
+dividing by zero.

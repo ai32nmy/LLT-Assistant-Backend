@@ -1,0 +1,8 @@
+ID: bugfix005
+Bug type: first element is skipped when computing maximum
+
+Description:
+The buggy implementation initializes current_max with values[1], ignoring
+values[0]. If the largest element is at index 0, it will never be considered.
+The fixed version correctly initializes current_max with values[0] and iterates
+over the remaining elements.

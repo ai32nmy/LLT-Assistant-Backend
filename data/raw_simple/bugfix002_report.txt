@@ -1,0 +1,8 @@
+ID: bugfix002
+Bug type: missing empty-list check (division by zero)
+
+Description:
+The buggy version divides by len(nums) without checking whether the list is
+empty. This causes a ZeroDivisionError when nums is []. The fixed version
+explicitly checks for an empty list and raises a ValueError instead of dividing
+by zero.

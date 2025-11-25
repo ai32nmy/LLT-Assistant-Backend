@@ -1,0 +1,8 @@
+ID: bugfix013
+Bug type: counter reset inside loop
+
+Description:
+In the buggy version, whenever v == target, the code sets count back to 0 and
+then increments it. As a result, the final count is at most 1, even if the
+target appears many times. The fixed version simply increments count without
+resetting it.

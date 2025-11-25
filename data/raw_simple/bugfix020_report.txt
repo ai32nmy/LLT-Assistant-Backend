@@ -1,0 +1,9 @@
+ID: bugfix020
+Bug type: incorrect median selection after partial sorting
+
+Description:
+The buggy algorithm performs two comparisons and then returns c, assuming c is
+the median. This is not always true. A simple example is a=3, b=1, c=2.
+After the swaps, c may end up as the maximum rather than the middle. The fixed
+version performs three comparisons so that a <= b <= c holds, and then returns b
+as the median.

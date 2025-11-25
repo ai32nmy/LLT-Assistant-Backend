@@ -1,0 +1,8 @@
+ID: bugfix018
+Bug type: missing length check in anagram test
+
+Description:
+The buggy function never checks if the two strings have the same length. In some
+cases, a shorter string can consume all counts and still return True even if the
+other string has extra characters. The fixed version first compares lengths and
+returns False when they differ.

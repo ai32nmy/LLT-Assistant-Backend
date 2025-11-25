@@ -1,0 +1,7 @@
+ID: bugfix009
+Bug type: incorrect Fibonacci base cases
+
+Description:
+The buggy version returns 0 for both n == 0 and n == 1, while the Fibonacci
+sequence (0-based) should be [0, 1, 1, 2, ...]. The fixed implementation
+returns 0 for n == 0 and 1 for n == 1 before running the iterative loop.

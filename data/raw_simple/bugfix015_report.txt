@@ -1,0 +1,8 @@
+ID: bugfix015
+Bug type: collapses multiple spaces when converting to title case
+
+Description:
+The buggy version skips empty words produced by split(" "), which collapses
+multiple spaces into a single space in the output. The fixed version preserves
+empty segments in result_words so that joining them with " " keeps the original
+spacing while still capitalizing the first letter of each non-empty word.

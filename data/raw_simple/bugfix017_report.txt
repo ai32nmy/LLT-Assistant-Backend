@@ -1,0 +1,9 @@
+ID: bugfix017
+Bug type: incorrect handling of negative indices
+
+Description:
+The buggy implementation treats any negative index as out of range, returning
+the default value. However, Python lists support negative indices to access
+elements from the end. The fixed version checks that the index is between
+-len(lst) and len(lst) - 1, and returns default only when the index is truly
+out of range.

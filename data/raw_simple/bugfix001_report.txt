@@ -1,0 +1,8 @@
+ID: bugfix001
+Bug type: off-by-one in loop bound
+
+Description:
+The buggy version iterates with range(n + 1), summing n + 1 elements when enough
+items are available in the list. The fixed version correctly uses range(n) so
+that exactly the first n elements are summed. For example, nums=[1,2,3], n=2
+should give 3, but the buggy code returns 6.
